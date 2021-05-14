@@ -12,11 +12,15 @@
   <body>
     <header>
       <nav class="text-right navbar-expand-lg">
+        <% if customer_signed_in? %>
         <ul>
           <li>ようこそ！</li>
         </ul>
         <ul>
           <li><%= link_to "topページ", root_path %></li>
+        </ul>
+        <ul>
+          <li></li>
         </ul>
       </nav>
       </div>
