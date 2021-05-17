@@ -1,4 +1,4 @@
-<%= form_with(model: reservationc, local: true) do |form| %>
+<%= form_with model: reservationc, local: true do |f| %>
   <% if reservationc.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reservationc.errors.count, "error") %> prohibited this reservationc from being saved:</h2>
@@ -10,17 +10,16 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.datetime_field :start_time %>
+    <%= f.datetime_field :start_time %>
   </div>
 
   <div class="actions">
-    <%= form.submit "予約" %>
+    <%= f.submit "予約" %>
   </div>
 <% end %>
