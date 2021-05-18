@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :customers
+  
+  devise_for :customers, skip: :all
   devise_scope :customer do
     get 'customers/sign_in' => 'customers/sessions#new', as: 'new_customer_session'
     post 'customers/sign_in' => 'customers/sessions#create', as: 'customer_session'
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
     post 'customers' => 'customers/registrations#create', as: 'customer_registration'
     get 'customers/password/new' => 'customers/passwords#new', as: 'new_customer_password'
   end
+  
   resources :reservationcs
+  
   root 'homes#top'
+  
 end
