@@ -10,9 +10,11 @@ Rails.application.routes.draw do
     get 'customers/password/new' => 'customers/passwords#new', as: 'new_customer_password'
   end
   
-  namespace :admins do
-    resources :customers, only: %i[show index edit update destroy]
+  scope shallow_path: "sekret" do
+  resources :articles do
+    resources :comments, shallow: true
   end
+end
   
   resources :reservationcs
   
