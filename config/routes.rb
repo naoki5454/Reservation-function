@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get 'customers/password/new' => 'customers/passwords#new', as: 'new_customer_password'
   end
   
+  namespace :admins do
+    resources :customers, only: %i[show index edit update destroy]
+  end
+  
   resources :reservationcs
   
   root 'homes#top'
