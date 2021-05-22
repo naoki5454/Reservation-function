@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   
   scope shallow_path: "sekret" do
   resources :articles do
-    resources :comments, shallow: true
   end
 end
   
