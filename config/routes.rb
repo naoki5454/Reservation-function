@@ -10,11 +10,6 @@ Rails.application.routes.draw do
     get 'customers/password/new' => 'customers/passwords#new', as: 'new_customer_password'
   end
   
-  scope shallow_path: "sekret" do
-  resources :articles do
-  end
-end
-  
   resources :reservationcs
   
   root 'homes#top'
