@@ -11,25 +11,15 @@
 
   <body>
     <header>
-      <nav>
-        <% if customer_signed_in? %>
+      <nav class="text-right navbar-expand-lg">
         <ul>
-          <li>ようこそ！</li>
-        </ul>
-        <ul>
-          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-        </ul>
-        <ul>
-          <li><%= link_to "topページ", root_path %></li>
-        </ul>
-        <ul>
-          <li><%= link_to "予約", new_reservationc_path %></li>
-        </ul>
-        <ul>
-          <li><%= link_to "予約一覧", reservationcs_path %></li>
-        </ul>
-        <% else %>
-        <ul>
+          <% if customer_signed_in? %>
+          <li class='font rounded nav-link text-body mr-1'>ようこそ！</li>
+          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'font rounded nav-link text-body mr-1'%></li>
+          <li><%= link_to "topページ", root_path, class: 'font rounded nav-link text-body mr-1'%></li>
+          <li><%= link_to "予約", new_reservationc_path, class: 'font rounded nav-link text-body mr-1'%></li>
+          <li><%= link_to "予約一覧", reservationcs_path, class: 'font rounded nav-link text-body mr-1'%></li>
+          <% else %>
           <li><%= link_to "topページ", root_path %></li>
         </ul>
         <% end %>
