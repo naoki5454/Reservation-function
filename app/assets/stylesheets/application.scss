@@ -41,3 +41,13 @@ html{
 ul {
   list-style: none;
 }
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  /* 個々のli要素のスタイル */
+  li {
+    margin: 50px;
+    width: 200px;
+  }
+}
