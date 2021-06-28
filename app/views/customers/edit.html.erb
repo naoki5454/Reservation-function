@@ -1,5 +1,5 @@
 プロフィール編集ページ
-<% form_with model: @customer, customer_path, local:true do |f| %>
+<%= form_with model: @customer, url: customer_path, local:true do |f| %>
 <%= @customer.email %>
 <%= f.text_field :email %>
 <% end %>

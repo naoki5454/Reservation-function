@@ -1,7 +1,7 @@
-class CustomersController < ApplicationControllers
+class CustomersController < ApplicationController
     
     def edit
-        @customer = current_customer
+      @customer = current_customer
     end
     
     def update
