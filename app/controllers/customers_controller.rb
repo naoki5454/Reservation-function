@@ -5,11 +5,15 @@ class CustomersController < ApplicationController
     end
     
     def update
-    @customer = current_customer
-    if @customer.update(customer_params)
-      redirect_to customer_path(@customer), notice: "編集成功しました。"
-    else
-      render :edit
+      @customer = current_customer
+      if @customer.update(customer_params)
+        redirect_to edit_customer_path(@customer)
+      else
+        render :edit
+      end
     end
+    
+    def customer_params
+      params.require(:customer).permit(:email)
     end
 end
